@@ -23,6 +23,7 @@ var (
 
 	width      = app.Flag("width", "preferred width of image (px)").Short('w').Default("250").Int()
 	height     = app.Flag("height", "preferred height of image (px)").Short('h').Default("250").Int()
+	quality    = app.Flag("quality", "image quality of output file").Short('q').Default("90").Int()
 	outputFile = app.Flag("output-file", "name of the output file").Short('o').Default("./smartcrop.jpg").String()
 )
 
@@ -79,7 +80,7 @@ func writeImageToJpeg(img image.Image, name string) error {
 	}
 	defer fso.Close()
 
-	return jpeg.Encode(fso, img, &jpeg.Options{Quality: 100})
+	return jpeg.Encode(fso, img, &jpeg.Options{Quality: *quality})
 }
 
 func writeImageToPng(img image.Image, name string) error {
