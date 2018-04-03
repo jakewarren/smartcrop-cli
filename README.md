@@ -1,5 +1,6 @@
 # smartcrop-cli
 
+[![Build Status](https://travis-ci.org/jakewarren/smartcrop-cli.svg?branch=master)](https://travis-ci.org/jakewarren/smartcrop-cli/)
 [![GitHub release](http://img.shields.io/github/release/jakewarren/smartcrop-cli.svg?style=flat-square)](https://github.com/jakewarren/smartcrop-cli/releases])
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jakewarren/smartcrop-cli/blob/master/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jakewarren/smartcrop-cli)](https://goreportcard.com/report/github.com/jakewarren/smartcrop-cli)
