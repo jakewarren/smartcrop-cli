@@ -31,6 +31,7 @@ Optional flags:
       --help        Show context-sensitive help (also try --help-long and --help-man).
   -w, --width=250   preferred width of image (px)
   -h, --height=250  preferred height of image (px)
+  -q, --quality=90  image quality of output file
   -o, --output-file="./smartcrop.jpg"  
                     name of the output file
   -V, --version     Show application version.
