@@ -4,20 +4,6 @@ VERSION := $(shell git describe --tags --abbrev=0 2>/dev/null || (git describe -
 LDFLAGS = -ldflags "-w -s -X main.version=${VERSION}"
 LDFLAGS_DEV = -ldflags "-X main.version=${VERSION}"
 
-MMAKE := $(shell command -v mmake 2> /dev/null)
-GOX := $(shell command -v gox 2> /dev/null)
-
-help:
-ifndef MMAKE
-    $(error "mmake is not available. Please install from https://github.com/tj/mmake ")
-endif
-	@mmake help
-
-gox:
-ifndef GOX
-    $(error "gox is not available. Please install from https://github.com/mitchellh/gox ")
-endif
-
 #Build release builds
 release: gox
 	@CGO_ENABLED=0 gox -osarch="darwin/386 darwin/amd64 linux/386 linux/amd64 windows/386 windows/amd64" ${LDFLAGS} -output="bin/{{.Dir}}_{{.OS}}_{{.Arch}}"

@@ -24,3 +24,15 @@ script:
   - megacheck ./...                          # "go vet on steroids" + linter
   - gocyclo -over 19 $GO_FILES               # forbid code with huge functions
   - golint -set_exit_status $(go list ./...) # one last linter
+  - make release                             # build release binaries
+
+deploy:
+  provider: releases
+  api_key:
+    secure: HcAiCo/EOSYvhAZL5XkPzT9Sp83x4L7OmWNWSbswx5AgeNPXgZpeZZncq2HnNPJC/yiSbeKSmELcEJxIVR/qURdjvwV4XbNLPez549aeWLQkQPhfZYTxv7Jsph4ZzV5JiSpYibtRhcRW9LDLfL3NsfdHUrd+aQ2k3i/M3rRumMnfN9KBScElYpDt4B26uEhH8aL8DL78vg6qoJ+Jx7l05svblsswlvRM4ITX3Gx3tSQQehRfDIW5jiytH88ccqthYrHFmqBE3TDkUf8UA4a7odvRUsnVNL3EB6uWSWOts27J2pWrEoyjRXY65/nVYJLqeBJ6fj2EvoGTC0mVK6GS8coTrToA8vfwDkTaj5x9cXgJihW/s3JqMYXbDwYNbiZpSGUZirPlcvi3/IsC9IaFt2w4XVTtIyvq/9WrN3A102+R++y7ascR6wFKig8qhoOnn4HdcqYE3uwaPoPbiIeCGk0IzB56sqVys15Kz4hbUIo/g5S9TlFVyRUPoUQ9e32SmMrE77qHBMkvCmjtqOEB52KACchGGsm3Scaq84PzM7nP9yKj87zr/WBP4Cme5QKWHOFoVpo4v2qGBPNbNKa/QbqMLLeT9dlRGBM0e9f4qn9Ta/hAr1KyM/xN0/TbOt2gCkdj2pryrheX46WIIKv+yv5kTSAu1lSHwzEED+HihUY=
+  file_glob: true
+	file: 'bin/*'
+  on:
+    repo: jakewarren/smartcrop-cli
+    tags: true
+
