@@ -21,6 +21,9 @@ go get github.com/jakewarren/smartcrop-cli
 ```
 
 ## Usage
+
+ℹ The width and height parameters are used to determine the aspect ratio; the generated image likely will not have the requested size.
+
 ```
 ❯ smartcrop-cli --help
 usage: smartcrop-cli [<flags>] <input>
