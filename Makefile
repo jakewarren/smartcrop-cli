@@ -5,7 +5,7 @@ LDFLAGS = -ldflags "-w -s -X main.version=${VERSION}"
 LDFLAGS_DEV = -ldflags "-X main.version=${VERSION}"
 
 #Build release builds
-release: gox
+release: 
 	@CGO_ENABLED=0 gox -osarch="darwin/386 darwin/amd64 linux/386 linux/amd64 windows/386 windows/amd64" ${LDFLAGS} -output="bin/{{.Dir}}_{{.OS}}_{{.Arch}}"
 
 #Build a development build
