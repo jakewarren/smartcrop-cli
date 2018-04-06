@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.1] - 2018-04-05
 ### Added
-- Added a quality parameter to adjust quality of generated JPEG file.
+- Added a quality parameter to adjust quality of generated JPEG file. @midzer
 
 ## [1.0.0] - 2018-03-28
 - Initial Release
